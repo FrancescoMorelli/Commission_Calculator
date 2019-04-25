@@ -17,11 +17,14 @@ namespace Commission_Calculator
         {
             InitializeComponent();
 
-            DataSet ds = Database.RetrieveData();
+        }
+
+        private void btn_Load_Click(object sender, EventArgs e)
+        {
+            DataSet ds = Database.RetrieveData(comboBox_TableName.Text);
 
             dataGrid_Database.ReadOnly = true;
             dataGrid_Database.DataSource = ds.Tables[0];
-
         }
     }
 }
