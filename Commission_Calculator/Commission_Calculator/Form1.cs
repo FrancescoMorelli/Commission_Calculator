@@ -21,10 +21,27 @@ namespace Commission_Calculator
 
         private void btn_Load_Click(object sender, EventArgs e)
         {
-            DataSet ds = Database.RetrieveData(comboBox_TableName.Text);
+            DataSet ds = Database.RetrieveRecords(txt_LoadDb.Text, comboBox_TableName.Text);
 
             dataGrid_Database.ReadOnly = true;
             dataGrid_Database.DataSource = ds.Tables[0];
+        }
+
+        private void btn_LoadDb_Click(object sender, EventArgs e)
+        {
+            txt_LoadDb.Text = Database.GetDatabasePath();
+            PopulateBoxTable();
+
+        }
+
+        public void PopulateBoxTable()
+        {
+            DataSet tableDs = Database.RetrieveTables(txt_LoadDb.Text);
+
+            comboBox_TableName.DataSource = tableDs.Tables[0];
+            comboBox_TableName.DisplayMember = "TABLE_NAME";
+
+            comboBox_TableName.Refresh();
         }
     }
 }
