@@ -5,8 +5,7 @@ namespace Commission_Calculator
 {
     public class Calculator
     {
-
-        static public int CalculateCommission(Dictionary<string, string> employerData)
+        static public float CalculateCommission(Dictionary<string, string> employerData)
         {
             int totalRevenue = Convert.ToInt32(employerData["MilkRevenue"]) +
                             Convert.ToInt32(employerData["WaterRevenue"]) +
@@ -18,10 +17,9 @@ namespace Commission_Calculator
                              Convert.ToInt32(employerData["CoffeeExpenses"]) +
                              Convert.ToInt32(employerData["TeaRevenue"]);
 
-            int profit = totalRevenue - totalExpenses;
+            float profit = (totalRevenue - totalExpenses) / 10;
 
             return profit;
-
         }
     }
 }

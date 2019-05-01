@@ -30,7 +30,7 @@
         {
             this.dataGrid_Database = new System.Windows.Forms.DataGridView();
             this.comboBox_TableName = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_DisplayTable = new System.Windows.Forms.Label();
             this.btn_DisplayTable = new System.Windows.Forms.Button();
             this.lbl_LoadDb = new System.Windows.Forms.Label();
             this.txt_LoadDb = new System.Windows.Forms.TextBox();
@@ -48,33 +48,34 @@
             this.dataGrid_Database.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGrid_Database.Size = new System.Drawing.Size(694, 315);
             this.dataGrid_Database.TabIndex = 0;
+            this.dataGrid_Database.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGrid_Database_MouseClick);
             // 
             // comboBox_TableName
             // 
             this.comboBox_TableName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_TableName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBox_TableName.FormattingEnabled = true;
-            this.comboBox_TableName.Location = new System.Drawing.Point(210, 459);
+            this.comboBox_TableName.Location = new System.Drawing.Point(225, 458);
             this.comboBox_TableName.Name = "comboBox_TableName";
             this.comboBox_TableName.Size = new System.Drawing.Size(255, 28);
             this.comboBox_TableName.TabIndex = 1;
             // 
-            // label1
+            // lbl_DisplayTable
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(12, 462);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Select table to display";
+            this.lbl_DisplayTable.AutoSize = true;
+            this.lbl_DisplayTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lbl_DisplayTable.Location = new System.Drawing.Point(12, 458);
+            this.lbl_DisplayTable.Name = "lbl_DisplayTable";
+            this.lbl_DisplayTable.Size = new System.Drawing.Size(173, 20);
+            this.lbl_DisplayTable.TabIndex = 2;
+            this.lbl_DisplayTable.Text = "Select table to display";
             // 
             // btn_DisplayTable
             // 
             this.btn_DisplayTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btn_DisplayTable.Location = new System.Drawing.Point(539, 458);
+            this.btn_DisplayTable.Location = new System.Drawing.Point(538, 458);
             this.btn_DisplayTable.Name = "btn_DisplayTable";
-            this.btn_DisplayTable.Size = new System.Drawing.Size(167, 28);
+            this.btn_DisplayTable.Size = new System.Drawing.Size(167, 29);
             this.btn_DisplayTable.TabIndex = 3;
             this.btn_DisplayTable.Text = "Display Table";
             this.btn_DisplayTable.UseVisualStyleBackColor = true;
@@ -92,7 +93,7 @@
             // 
             // txt_LoadDb
             // 
-            this.txt_LoadDb.Location = new System.Drawing.Point(236, 64);
+            this.txt_LoadDb.Location = new System.Drawing.Point(231, 63);
             this.txt_LoadDb.Name = "txt_LoadDb";
             this.txt_LoadDb.ReadOnly = true;
             this.txt_LoadDb.Size = new System.Drawing.Size(273, 22);
@@ -124,15 +125,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 608);
+            this.ClientSize = new System.Drawing.Size(727, 608);
             this.Controls.Add(this.btn_CalculateCommission);
             this.Controls.Add(this.btn_LoadDb);
             this.Controls.Add(this.txt_LoadDb);
             this.Controls.Add(this.lbl_LoadDb);
             this.Controls.Add(this.btn_DisplayTable);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_DisplayTable);
             this.Controls.Add(this.comboBox_TableName);
             this.Controls.Add(this.dataGrid_Database);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "Commission Calculator";
@@ -146,7 +149,7 @@
 
         private System.Windows.Forms.DataGridView dataGrid_Database;
         private System.Windows.Forms.ComboBox comboBox_TableName;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_DisplayTable;
         private System.Windows.Forms.Button btn_DisplayTable;
         private System.Windows.Forms.Label lbl_LoadDb;
         private System.Windows.Forms.TextBox txt_LoadDb;
