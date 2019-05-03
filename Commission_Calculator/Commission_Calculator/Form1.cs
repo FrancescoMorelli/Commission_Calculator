@@ -98,7 +98,9 @@ namespace Commission_Calculator
                 }
             }
             catch(Exception)
-            { }
+            {
+                MessageBox.Show("Test");
+            }
         }
     }
 }
